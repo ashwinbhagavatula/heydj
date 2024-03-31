@@ -4,10 +4,10 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: #09090B;
     --foreground: 20 14.3% 4.1%;
 
-    --card: 0 0% 100%;
+    --card: #161A1D;
     --card-foreground: 20 14.3% 4.1%;
 
     --popover: 0 0% 100%;
@@ -73,4 +73,31 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  @font-face {
+    font-family: 'Major';
+    font-style: normal;
+    font-weight: 400;
+    src: url(/public/MajorMonoDisplay-Regular.ttf) format('tff');
+  }
+}
+
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #22333b;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #842e1b;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #78290f;
 }

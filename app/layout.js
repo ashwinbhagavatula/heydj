@@ -1,7 +1,10 @@
 import { Inter } from "next/font/google";
+import { Major_Mono_Display } from "next/font/google" 
 import "./globals.css";
+import Navbar from "@/components/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
+const major = Major_Mono_Display({subsets:["latin"], variable:'--font-major', weight:'400'});
 
 export const metadata = {
   title: "HeyDJ",
@@ -10,8 +13,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className="bg-background">
+      <body className={inter.className}>
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }
