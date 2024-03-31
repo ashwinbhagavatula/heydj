@@ -1,5 +1,12 @@
 # HeyDJ
-A web application that has arisen from the problem of not being able to ask your DJ in the bar or pub you're in to play the song you so want to listen to.
+A web application designed to enhance the music experience in bars and pubs by empowering patrons to influence the playlist. Have you ever found yourself wanting to hear a specific song at a venue but hesitated to approach the DJ? CrowdDJ eliminates this hesitation by allowing users to search for their favorite songs and upvote them. The more upvotes a song receives, the higher it ranks in the queue, giving the DJ valuable insight into the crowd's preferences.
 
- With this people can search for their favourite song and upvote it and based on the number of upvotes the song is placed between the top to bottom ranking in the queue. 
- The DJ knows what the crowd wants to hear and can play his set accordingly 
+### Features
+- ### Song Upvoting
+  Users can search for songs and upvote their favorites, influencing the playlist in real-time.
+- ### Dynamic Playlist
+  The playlist is dynamically updated based on the number of upvotes each song receives, ensuring that the most popular songs are played.
+- ### Crowd Engagement
+  Encourages interaction between patrons and the DJ, creating a lively and engaging atmosphere.
+- ### User-Friendly Interface
+  Intuitive design makes it easy for users to search for songs and participate in shaping the playlist.
