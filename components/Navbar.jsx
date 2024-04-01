@@ -5,9 +5,9 @@ import { Button } from './ui/button'
 import Link from 'next/link'
 function Navbar() {
   return (
-    <div className='flex justify-between items-center px-4 my-4 max-h-24'>
+    <div className='flex justify-between items-center px-4 bg-black pt-4 z-50 '>
         <Link href="/">
-          <Image src= {logo} width={50} height={50} />
+          <Image src= {logo} width={70} height={70} />
         </Link>
       
         <div className='flex gap-4'>
