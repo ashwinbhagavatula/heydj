@@ -13,7 +13,7 @@ const major = Major_Mono_Display({subsets:["latin"], variable:'--font-major', we
 export default function Home() {
   return (
       <main className="min-h-screen relative">
-        <DynamicWavyBackground className="max-w-4xl mx-auto pb-40" backgroundFill="#09090B">
+        <DynamicWavyBackground className="max-w-4xl mx-auto pb-40" backgroundFill="#0b090a">
         <p className={`${major.className} text-5xl md:text-7xl text-white font-bold inter-var text-center`}>
           HeyDJ
         </p>
