@@ -5,7 +5,7 @@ import { Button } from './ui/button'
 import Link from 'next/link'
 function Navbar() {
   return (
-    <div className='flex justify-between items-center px-4 bg-black pt-4 z-50 '>
+    <div className='flex justify-between items-center px-4 pt-4 z-50 '>
         <Link href="/">
           <Image src= {logo} width={70} height={70} />
         </Link>

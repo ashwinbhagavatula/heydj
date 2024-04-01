@@ -5,6 +5,7 @@ import React from "react";
 import dynamic from "next/dynamic";
 const DynamicWavyBackground = dynamic(() => import("../components/ui/wavy-background"), {
   ssr: false, // Ensure it's not rendered on the server-side
+  loading: () => <div style={{ height: "800px" }}></div>
 });
 const major = Major_Mono_Display({subsets:["latin"], variable:'--font-major', weight:'400'});
 
@@ -12,15 +13,15 @@ const major = Major_Mono_Display({subsets:["latin"], variable:'--font-major', we
 export default function Home() {
   return (
       <main className="min-h-screen relative">
-        <DynamicWavyBackground className="max-w-4xl mx-auto pb-40">
-        <p className={`${major.className} text-2xl md:text-5xl lg:text-7xl text-white font-bold inter-var text-center`}>
+        <DynamicWavyBackground className="max-w-4xl mx-auto pb-40" backgroundFill="#09090B">
+        <p className={`${major.className} text-5xl md:text-7xl text-white font-bold inter-var text-center`}>
           HeyDJ
         </p>
         <p className="text-base md:text-lg mt-4 text-white font-normal inter-var text-center">
         Never feel disconnected from the crowd again 
         </p>
         </DynamicWavyBackground>
-        <div className="flex flex-col gap-10 text-white mb-52 text-lg md:text-2xl px-4 bg-black">
+        <div className="flex flex-col gap-10 text-white mb-52 text-lg md:text-2xl px-4">
             <div className="flex md:gap-16 gap-4 justify-center items-center mx-auto">
               <div className="bg-red-400 w-20 h-20 rounded-3xl"></div>
               <p className="max-w-xs font-semibold">Create a music queue to know your crowd’s favourites</p>
