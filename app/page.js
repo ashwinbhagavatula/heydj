@@ -12,7 +12,7 @@ const major = Major_Mono_Display({subsets:["latin"], variable:'--font-major', we
 
 export default function Home() {
   return (
-      <main className="min-h-screen relative">
+      <main className="min-h-screen relative text-white">
         <DynamicWavyBackground className="max-w-4xl mx-auto pb-40" backgroundFill="#0b090a">
         <p className={`${major.className} text-5xl md:text-7xl text-white font-bold inter-var text-center`}>
           HeyDJ
@@ -28,11 +28,11 @@ export default function Home() {
             </div>
             <div className="flex md:gap-16 gap-4 justify-center items-center mx-auto">
               <div className="bg-green-400 w-20 h-20 rounded-3xl"></div>
-              <p className="max-w-xs font-semibold">Create a music queue to know your crowd’s favourites</p>
+              <p className="max-w-xs font-semibold">Instantly shareable urls and QR Generator</p>
             </div>
             <div className="flex md:gap-16 gap-4 justify-center items-center mx-auto">
               <div className="bg-blue-400 w-20 h-20 rounded-3xl"></div>
-              <p className="max-w-xs font-semibold">Create a music queue to know your crowd’s favourites</p>
+              <p className="max-w-xs font-semibold">Interact with your crowd and engage with an intuitive design and user experience</p>
             </div>
           </div>
 
