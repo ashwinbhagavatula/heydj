@@ -7,6 +7,14 @@ import Link from 'next/link'
 import { signIn, signOut, useSession } from "next-auth/react"
 import { useRouter, redirect } from 'next/navigation';
 import { toast } from './ui/use-toast'
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 
 function Navbar() {
   const { data: session } = useSession()
@@ -26,6 +34,7 @@ function Navbar() {
   const handleLogOut = ()=>{
     LogOut()
   }
+  console.log(userData)
   return (
     <div className='flex justify-between items-center px-4 pt-4 z-50 '>
         <Link href="/">
@@ -44,9 +53,24 @@ function Navbar() {
             </>
           ):(
             <>
-            <Button className="bg-accent" onClick={handleLogOut}>
+            {/* <Button className="bg-accent" onClick={handleLogOut}>
               <Link href="/">Log Out</Link>
-            </Button>
+            </Button> */}
+            <DropdownMenu>
+              <DropdownMenuTrigger>
+                <div className='w-[60px] h-[60px] rounded-full bg-accent flex justify-center items-center mx-auto text-3xl font-semibold'>
+                  {userData.user?.email.charAt(0).toUpperCase()}
+                </div>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem>Profile</DropdownMenuItem>
+                {/* <DropdownMenuItem>Team</DropdownMenuItem> */}
+                <DropdownMenuItem><Link href="/" onClick={handleLogOut}>Log Out</Link></DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
             </>
           )}
             
