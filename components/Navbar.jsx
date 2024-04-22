@@ -34,7 +34,7 @@ function Navbar() {
   const handleLogOut = ()=>{
     LogOut()
   }
-  console.log(userData)
+  
   return (
     <div className='flex justify-between items-center px-4 pt-4 z-50 '>
         <Link href="/">
@@ -58,7 +58,7 @@ function Navbar() {
             </Button> */}
             <DropdownMenu>
               <DropdownMenuTrigger>
-                <div className='w-[60px] h-[60px] rounded-full bg-accent flex justify-center items-center mx-auto text-3xl font-semibold'>
+                <div className='w-[60px] h-[60px] rounded-full bg-red-400 flex justify-center items-center mx-auto text-3xl font-semibold'>
                   {userData.user?.email.charAt(0).toUpperCase()}
                 </div>
               </DropdownMenuTrigger>
