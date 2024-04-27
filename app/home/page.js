@@ -1,8 +1,18 @@
+'use client'
 import Queue from '@/components/Queue'
 import { Button } from '@/components/ui/button'
+import { useSession } from 'next-auth/react'
+import { useRouter } from 'next/navigation';
 import React from 'react'
 
 function page() {
+  const {data:session} = useSession()
+  const userData = session
+  const router = useRouter();
+
+  if(userData === null){
+    router.push("/")
+  }
   return (
     <>
     <div className='mt-10 px-4 md:px-20 '>

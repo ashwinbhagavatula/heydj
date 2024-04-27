@@ -24,8 +24,9 @@ function Navbar() {
     try {
       await signOut({
         redirect:true,
-        callbackUrl: '/'
+        callbackUrl: '/' 
       })
+      sessionStorage.clear();
     } catch(error){
       console.log("Error signing out: ", error);
     }
