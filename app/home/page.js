@@ -7,11 +7,10 @@ import React, { useEffect } from 'react'
 
 function Page() {
   const {data:session} = useSession()
-  const userData = session
   const router = useRouter();
 
   useEffect(()=>{
-    if(userData === null){
+    if(!session){
       router.push("/")
     }
   }, [session, router])
