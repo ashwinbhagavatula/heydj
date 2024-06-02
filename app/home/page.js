@@ -5,7 +5,7 @@ import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/navigation';
 import React from 'react'
 
-function page() {
+function Page() {
   const {data:session} = useSession()
   const userData = session
   const router = useRouter();
@@ -25,4 +25,4 @@ function page() {
   )
 }
 
-export default page
+export default Page
