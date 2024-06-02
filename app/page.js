@@ -34,7 +34,7 @@ export default function Home() {
             <div className="flex flex-col gap-4">
               <Image src={dj} height={50} width={50}/>
               <h2 className="font-bold max-w-xl text-3xl">Improve your DJ performance by using personalized QR codes to engage with your audience</h2>
-              <p className="text-muted text-sm max-w-xl">HeyDJ allows DJs to create and share unique QR codes with their audience. By scanning the QR codes, users can upvote their favorite songs, giving the DJ valuable insights into the crowd's preferences and enabling them to curate a set that keeps the energy high.</p>
+              <p className="text-muted text-sm max-w-xl">HeyDJ allows DJs to create and share unique QR codes with their audience. By scanning the QR codes, users can upvote their favorite songs, giving the DJ valuable insights into the crowd&apos;s preferences and enabling them to curate a set that keeps the energy high.</p>
             </div>
             <Image src={djcontroller} className= "md:w-[450px] w-96 h-80 rounded-2xl" height={200} width={200}/>
           </div>    
@@ -49,7 +49,7 @@ export default function Home() {
               <p className="text-muted text-sm max-w-xl">HeyDJ revolutionizes the way DJs interact with their audience and curate unforgettable music experiences. With our innovative platform, DJs can easily share custom QR codes with their audience, allowing them to upvote their favorite songs and provide valuable feedback.</p>
               <div className="flex gap-4">
                 <div>
-                  <h3 className="text-xl font-semibold ">For DJ's</h3>
+                  <h3 className="text-xl font-semibold ">For DJs</h3>
                   <p className="text-muted text-sm max-w-64">Better audience engagement and interaction during live performances.</p>
                 </div>
                 <div>
@@ -68,7 +68,7 @@ export default function Home() {
               <h2 className="font-bold max-w-xl text-3xl">Improve your DJ performance by using personalized QR codes to engage with your audience</h2>
             </div>
             <div className="flex flex-col gap-6">
-              <p className="text-muted text-sm max-w-xl">HeyDJ allows DJs to create and share unique QR codes with their audience. By scanning the QR codes, users can upvote their favorite songs, giving the DJ valuable insights into the crowd's preferences and enabling them to curate a set that keeps the energy high.</p>
+              <p className="text-muted text-sm max-w-xl">HeyDJ allows DJs to create and share unique QR codes with their audience. By scanning the QR codes, users can upvote their favorite songs, giving the DJ valuable insights into the crowd&apos;s preferences and enabling them to curate a set that keeps the energy high.</p>
               <div className="flex gap-10">
               <Button className="bg-accent">
                 <Link href="/sign-up">Sign Up</Link>
