@@ -14,7 +14,7 @@ function Page() {
     if(userData === null){
       router.push("/")
     }
-  }, [])
+  }, [session, router])
   
   return (
     <>
