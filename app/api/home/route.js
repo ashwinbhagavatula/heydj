@@ -51,3 +51,25 @@ export const POST = async (req) => {
     return new Response(error, { status: 500 });
   }
 };
+
+export const DELETE = async (req) => {
+  const songId = req.nextUrl.searchParams.get("songId");
+  const authHeader = req.headers.get("Authorization");
+  const userId = authHeader ? authHeader.split(" ")[1] : null;
+  try {
+    await connectMongo();
+    console.log(userId, songId, authHeader);
+    const result = await Queue.updateOne(
+      { userId: userId }, // Find the user
+      { $pull: { songQueue: { songId: songId } } } // Remove the song from the array
+    );
+    if (result.modifiedCount > 0) {
+      return new Response("Song removed from queue.", { status: 200 });
+    } else {
+      return new Response("Song not found in queue.", { status: 404 });
+    }
+  } catch (error) {
+    console.error("Error deleting song:", error);
+    res.status(500).json({ message: "Failed to delete song." });
+  }
+};

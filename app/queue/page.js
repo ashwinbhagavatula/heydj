@@ -23,8 +23,7 @@ const Page = () => {
   }, []);
 
   useEffect(() => {
-    if (queueId) {
-      // Only run the effect if queueId is available
+    if (queueId && !isModalOpen) {
       const getQueue = async () => {
         try {
           const response = await axios.get(`/api/queue?queueId=${queueId}`);
@@ -36,7 +35,7 @@ const Page = () => {
 
       getQueue();
     }
-  }, [queueId]);
+  }, [queueId, isModalOpen]);
 
   // Example function to fetch the access token
   const fetchAccessToken = async () => {
@@ -67,6 +66,7 @@ const Page = () => {
         const searchResults = response.data.tracks.items; // Adjust this based on the response structure
         console.log("Search Results:", searchResults);
         setSongs(searchResults);
+        setSearchQuery("");
         setIsModalOpen(true);
         // Store the search results in a state or handle it as needed
       } catch (error) {
@@ -83,6 +83,7 @@ const Page = () => {
           placeholder="Which song to play next ?"
           className="flex justify-center items-center mx-auto focus:border-accent"
           onChange={(e) => setSearchQuery(e.target.value)}
+          value={searchQuery}
         />
         <Button
           variant="outline"
@@ -96,6 +97,7 @@ const Page = () => {
         page={"queuePage"}
         queueData={queueData}
         handleSetQueueData={handleSetQueueData}
+        setQueueData={setQueueData}
       />
       <Modal
         isOpen={isModalOpen}

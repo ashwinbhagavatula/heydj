@@ -7,11 +7,13 @@ import React, { useEffect, useState } from "react";
 import { POST } from "../api/home/route";
 import axios from "axios";
 import { IoCopyOutline } from "react-icons/io5";
+import Loading from "@/app/home/loading";
 function Page() {
   const { data: session, status } = useSession();
   const router = useRouter();
   const [copySuccess, setCopySuccess] = useState("");
   const [queueData, setQueueData] = useState(null);
+
   useEffect(() => {
     if (status === "loading") return; // Wait for session to load
     if (!session) {
@@ -24,6 +26,7 @@ function Page() {
     const createQueue = async () => {
       if (session) {
         try {
+          await new Promise((resolve) => setTimeout(resolve, 4000));
           const queue = await axios.get(
             `/api/home?userId=${session.user.userId}`
           );
@@ -89,7 +92,13 @@ function Page() {
           )}
         </div>
       </div>
-      <Queue queueData={queueData} handleSetQueueData={handleSetQueueData} />
+
+      <Queue
+        page={"home"}
+        queueData={queueData}
+        handleSetQueueData={handleSetQueueData}
+        setQueueData={setQueueData}
+      />
     </>
   );
 }
