@@ -40,7 +40,7 @@ function Page() {
               setQueueData(queue.data.queue);
             }
           }
-          setQueueData(queue.data);
+          setQueueData(queue.data.queue);
         } catch (error) {
           console.error("Error creating queue", error);
         }
