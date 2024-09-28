@@ -16,18 +16,25 @@ const queueSchema = new Schema(
       {
         songId: {
           type: String,
+          required: true,
         },
         songCover: {
           type: String,
         },
+        songAlbum: {
+          type: String,
+          required: true,
+        },
         songName: {
           type: String,
+          required: true,
         },
         upvotes: {
           type: Number,
         },
         artist: {
           type: String,
+          required: true,
         },
       },
     ],

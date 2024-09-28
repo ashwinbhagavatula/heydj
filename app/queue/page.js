@@ -1,5 +1,6 @@
 "use client";
 import Queue from "@/components/Queue";
+import Modal from "@/components/Modal";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useSearchParams } from "next/navigation";
@@ -14,6 +15,8 @@ const Page = () => {
   const [queueData, setQueueData] = useState(null);
   const [accessToken, setAccessToken] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
+  const [songs, setSongs] = useState([]); // State for storing song results
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const queueId = searchParams.get("qId");
   useEffect(() => {
     fetchAccessToken();
@@ -63,6 +66,8 @@ const Page = () => {
         );
         const searchResults = response.data.tracks.items; // Adjust this based on the response structure
         console.log("Search Results:", searchResults);
+        setSongs(searchResults);
+        setIsModalOpen(true);
         // Store the search results in a state or handle it as needed
       } catch (error) {
         console.error("Error searching for song:", error);
@@ -71,8 +76,8 @@ const Page = () => {
   };
 
   return (
-    <>
-      <div className="flex gap-2 px-4 md:px-20 mt-8 md:mt-16">
+    <div className="relative">
+      <div className=" flex gap-2 px-4 md:px-20 mt-8 md:mt-16">
         <Input
           type="text"
           placeholder="Which song to play next ?"
@@ -92,7 +97,13 @@ const Page = () => {
         queueData={queueData}
         handleSetQueueData={handleSetQueueData}
       />
-    </>
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        songs={songs}
+        queueId={queueId}
+      />
+    </div>
   );
 };
 
