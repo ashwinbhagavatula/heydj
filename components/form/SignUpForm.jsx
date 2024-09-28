@@ -47,7 +47,6 @@ function SignUpForm() {
      
       // 2. Define a submit handler.
     function onSubmit(values) {
-        console.log(values)
         auth('Sign_Up', values)
     }
 

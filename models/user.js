@@ -19,6 +19,7 @@ const userSchema = new Schema(
     },
     password: {
       type: String,
+      required: true,
     },
   },
   {
@@ -45,5 +46,5 @@ userSchema.pre("save", function (next) {
   next();
 });
 
-const User = models.users || model("users", userSchema);
-module.exports = User;
+const User = models?.User || model("User", userSchema);
+export default User;

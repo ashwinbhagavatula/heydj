@@ -16,7 +16,12 @@ function QueueCard(props) {
             </div>
             <div className='flex flex-col gap-4 max-w-28 md:max-w-48'>
                 <h3 className='text-primary text-lg flex flex-wrap'>Upvotes: {props.upvotes}</h3>
-                <Button className="bg-destructive">Remove</Button>
+                {props.page === "queuePage" ? (
+                    <Button className="bg-accent">Upvote</Button>
+                ):(
+                    <Button className="bg-destructive">Remove</Button>
+                )}
+                
             </div>
         </div>
     </div>

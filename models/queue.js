@@ -10,6 +10,7 @@ const queueSchema = new Schema(
     },
     userId: {
       type: String,
+      required: true,
     },
     songQueue: [
       {
@@ -38,7 +39,6 @@ const queueSchema = new Schema(
 
 queueSchema.pre("save", function (next) {
   if (this.isNew) {
-    console.log(this);
     const { queueId } = this;
     if (!queueId || typeof queueId !== "string") {
       this.queueId = uuid();
@@ -49,4 +49,4 @@ queueSchema.pre("save", function (next) {
 });
 
 const Queue = models?.Queue || model("Queue", queueSchema);
-module.exports = { Queue };
+export default Queue;

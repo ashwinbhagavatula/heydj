@@ -2,21 +2,13 @@ import connectMongo from "@/database/db";
 import Queue from "@/models/queue";
 import User from "@/models/user";
 import { NextResponse } from "next/server";
+
 export const GET = async (req) => {
   try {
     await connectMongo();
-    const userId = req.nextUrl.searchParams.get("userId");
-    if (!userId) {
-      return new NextResponse("Missing User ID", { status: 400 });
-    }
+    const queueId = req.nextUrl.searchParams.get("queueId");
 
-    const user = await User.findOne({ userId: userId });
-    if (!user) {
-      return new NextResponse("Invalid User", { status: 400 });
-    }
-    // console.log(user);
-    // Fetch queues
-    const queues = await Queue.findOne({ userId: userId });
+    const queues = await Queue.findOne({ queueId: queueId });
     if (!queues) {
       console.error("There are no queues for this user");
     }
