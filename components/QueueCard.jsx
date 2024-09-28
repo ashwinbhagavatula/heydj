@@ -1,6 +1,4 @@
 import React from 'react'
-import Image from 'next/image'
-import logo from '@/public/logo.svg'
 import { Button } from './ui/button'
 const QueueCard = (props) => {
 

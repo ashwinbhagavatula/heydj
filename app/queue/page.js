@@ -8,10 +8,12 @@ import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { POST } from "../api/home/route";
 import axios from "axios";
+import Loading from "../home/loading";
 
 const Page = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const [isLoading, setIsLoading] = useState(false);
   const [queueData, setQueueData] = useState(null);
   const [accessToken, setAccessToken] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
@@ -25,11 +27,14 @@ const Page = () => {
   useEffect(() => {
     if (queueId && !isModalOpen) {
       const getQueue = async () => {
+        setIsLoading(true);
         try {
           const response = await axios.get(`/api/queue?queueId=${queueId}`);
           setQueueData(response.data.queue);
         } catch (error) {
           console.error("Error fetching queue data:", error);
+        } finally {
+          setIsLoading(false);
         }
       };
 
@@ -93,12 +98,17 @@ const Page = () => {
           Search
         </Button>
       </div>
-      <Queue
-        page={"queuePage"}
-        queueData={queueData}
-        handleSetQueueData={handleSetQueueData}
-        setQueueData={setQueueData}
-      />
+      {isLoading ? (
+        <Loading page={"queuePage"} />
+      ) : (
+        <Queue
+          page={"queuePage"}
+          queueData={queueData}
+          handleSetQueueData={handleSetQueueData}
+          setQueueData={setQueueData}
+        />
+      )}
+
       <Modal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
