@@ -67,7 +67,7 @@ function Page() {
         <h1 className="text-3xl font-semibold text-primary">Queue URL</h1>
         <p className="mt-4 max-w-full break-all bg-secondary w-fit px-4 py-2 rounded-lg md:rounded-xl">
           {queueData &&
-            `${process.env.NEXT_PUBLIC_BASEURL}/queue?qId=${queueData?.queue.queueId}`}
+            `${process.env.NEXT_PUBLIC_BASEURL}/queue?qId=${queueData?.queueId}`}
         </p>
         <div className="flex gap-4 items-center mt-4">
           <Button className="bg-accent ">Generate QR</Button>
@@ -75,7 +75,7 @@ function Page() {
             <IoCopyOutline
               onClick={(event) =>
                 copyToClipBoard(
-                  `${process.env.NEXT_PUBLIC_BASEURL}/queue?qId=${queueData?.queue.queueId}`
+                  `${process.env.NEXT_PUBLIC_BASEURL}/queue?qId=${queueData?.queueId}`
                 )
               }
               className="h-4 w-4"
