@@ -40,7 +40,7 @@ function Navbar() {
   return (
     <div className='flex justify-between items-center px-4 pt-4 z-50 '>
         <Link href={pathname === '/' || pathname === '/queue' ? '/' : '/home'}>
-          <Image src= {logo} width={70} height={70} />
+          <Image alt='Hey DJ Logo' src= {logo} width={70} height={70} />
         </Link>
       
         <div className='flex gap-4'>
@@ -71,7 +71,7 @@ function Navbar() {
                   <DropdownMenuContent>
                     <DropdownMenuLabel>My Account</DropdownMenuLabel>
                     <DropdownMenuSeparator />
-                    <DropdownMenuItem>Profile</DropdownMenuItem>
+                    <DropdownMenuItem><Link href="/home" >Profile</Link></DropdownMenuItem>
                     {/* <DropdownMenuItem>Team</DropdownMenuItem> */}
                     <DropdownMenuItem><Link href="/" onClick={handleLogOut}>Log Out</Link></DropdownMenuItem>
                   </DropdownMenuContent>

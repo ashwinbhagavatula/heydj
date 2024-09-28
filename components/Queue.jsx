@@ -3,9 +3,9 @@ import React from 'react'
 import QueueCard from './QueueCard'
 
 const Queue = ({page, queueData, handleSetQueueData}) => {
-    
+
     return (
-    <div className='mt-16 md:mt-20 px-4 md:px-20 mb-24'>
+    <div className='mt-10 md:mt-20 px-4 md:px-20 mb-24'>
         <h2 className='text-3xl font-bold text-primary mb-6'>{page === "queuePage" ? "Song Requests Queue" : "My Queue"}</h2>
 
         {queueData && queueData.songQueue && queueData.songQueue.length > 0 ? 

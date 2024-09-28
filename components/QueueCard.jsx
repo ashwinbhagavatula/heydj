@@ -7,7 +7,7 @@ function QueueCard(props) {
     <div className='mt-3 bg-card rounded-lg md:rounded-xl py-4 px-2 md:px-8'>
         <div className='flex justify-between items-center gap-2'>
             <div className='flex gap-4 md:gap-10 grow'>
-                <Image src= {logo} className='w-20 h-20 md:w-28 md:h-28' />
+                <Image alt="song cover" src= {logo} className='w-20 h-20 md:w-28 md:h-28' />
                 <div className='flex flex-col gap-1'>
                     <p className='text-primary text-xl md:text-2xl font-semibold'>{props.songname}</p>
                     <p className='md:text-lg'>{props.album}</p>

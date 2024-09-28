@@ -37,7 +37,7 @@ function Page() {
               const queue = await axios.get(
                 `/api/home?userId=${session.user.userId}`
               );
-              setQueueData(queue.data);
+              setQueueData(queue.data.queue);
             }
           }
           setQueueData(queue.data);
@@ -49,7 +49,6 @@ function Page() {
     createQueue();
   }, [session]);
 
-  console.log(queueData);
   const handleSetQueueData = (queue) => {
     setQueueData(queue);
   };
@@ -66,7 +65,7 @@ function Page() {
     <>
       <div className="mt-10 px-4 md:px-20">
         <h1 className="text-3xl font-semibold text-primary">Queue URL</h1>
-        <p className="mt-4 max-w-full break-all bg-secondary w-fit px-4 py-2 rounded-xl">
+        <p className="mt-4 max-w-full break-all bg-secondary w-fit px-4 py-2 rounded-lg md:rounded-xl">
           {queueData &&
             `${process.env.NEXT_PUBLIC_BASEURL}/queue?qId=${queueData?.queue.queueId}`}
         </p>
@@ -84,7 +83,7 @@ function Page() {
           </Button>
           {/* Show the copy success message */}
           {copySuccess && (
-            <div className="text-primary bg-secondary p-2 rounded-xl">
+            <div className="text-primary bg-secondary p-2 rounded-lg md:rounded-xl">
               {copySuccess}
             </div>
           )}
