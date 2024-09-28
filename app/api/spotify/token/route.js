@@ -5,7 +5,7 @@ import { Buffer } from "buffer";
 
 // Spotify credentials
 const CLIENT_ID = process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_ID;
-const CLIENT_SECRET = process.env.NEXT_PUBLIC_SPOTIFY_SECURITY;
+const CLIENT_SECRET = process.env.SPOTIFY_SECURITY;
 
 export const POST = async () => {
   const tokenUrl = "https://accounts.spotify.com/api/token";
