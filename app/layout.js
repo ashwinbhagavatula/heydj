@@ -17,7 +17,7 @@ export const metadata = {
   description:
     "A web application designed to enhance the music experience in bars and pubs by empowering patrons to influence the playlist",
   icons: {
-    icon: "/favicon.ico",
+    icon: "/logo.svg",
   },
 };
 
@@ -25,8 +25,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="bg-background overflow-x-hidden text-white ">
       <head>
-        {/* Any other head elements */}
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/logo.svg" sizes="any" />
       </head>
       <body className={`${inter.className} min-h-screen`}>
         <Provider>
