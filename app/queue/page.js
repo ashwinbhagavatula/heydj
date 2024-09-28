@@ -86,7 +86,7 @@ const Page = () => {
         <Input
           type="text"
           placeholder="Which song to play next ?"
-          className="flex justify-center items-center mx-auto focus:border-accent"
+          className="flex justify-center items-center mx-auto focus:border-accent bg-neutral-900 rounded-lg "
           onChange={(e) => setSearchQuery(e.target.value)}
           value={searchQuery}
         />
