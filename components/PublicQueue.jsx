@@ -68,7 +68,7 @@ const PublicQueue = () => {
           `/api/spotify/search?song=${searchQuery}&accessToken=${accessToken}`
         );
         const searchResults = response.data.tracks.items; // Adjust this based on the response structure
-        console.log("Search Results:", searchResults);
+        // console.log("Search Results:", searchResults);
         setSongs(searchResults);
         setSearchQuery("");
         setIsModalOpen(true);

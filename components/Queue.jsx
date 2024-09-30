@@ -4,6 +4,7 @@ import QueueCard from './QueueCard'
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { FaSort } from "react-icons/fa";
+import { toast } from '@/components/ui/use-toast'
 import axios from "axios";
 const Queue = ({page, queueData, handleSetQueueData, setQueueData}) => {
     const { data: session, status } = useSession();
@@ -61,6 +62,15 @@ const Queue = ({page, queueData, handleSetQueueData, setQueueData}) => {
 
     const handleUpvote =  async (songId) =>{
         try {
+            const upvotedSongs = JSON.parse(localStorage.getItem('upvotedSongs')) || [];
+
+            if(upvotedSongs.includes(songId)){
+                toast({
+                    title: "Hold up! You've already hyped this track \u{1F525}",
+                    description: "How about spicing things up? Search for another banger using the search bar!"
+                })
+                return;
+            }
             setSortedQueueData((prevQueue) => {
                 return prevQueue.map(song => 
                     song.songId === songId 
@@ -71,12 +81,14 @@ const Queue = ({page, queueData, handleSetQueueData, setQueueData}) => {
 
             try {
                 // Send the upvote request to the backend
-                console.log(queueData.queueId)
+                // console.log(queueData.queueId)
                 const resp = await axios.put(`/api/queue/${queueData?.queueId}?songId=${songId}`);
                 
                 if (resp.status !== 200) {
                     throw new Error('Failed to upvote');
                 }
+                upvotedSongs.push(songId);
+                localStorage.setItem('upvotedSongs', JSON.stringify(upvotedSongs));
             } catch (error) {
                 console.log("Error Upvoting the song: ", error);
                 // Rollback the optimistic update in case of error
