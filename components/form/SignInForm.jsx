@@ -109,9 +109,19 @@ function SignInForm() {
         before:bg-primary after:ml-4 after:block after:h-px after:flex-grow after:bg-primary'>
             or
         </div>
-        <p className='text-center text-sm mt-2'>
-            If you don&apos;t have an account, please&nbsp; <br></br>
-            <Link className="text-blue-500 hover:underline" href="/sign-up">Sign Up</Link>
+        <p className='flex flex-col text-center text-sm mt-2 items-center mx-auto'>
+            <span className='mb-2'>If you don&apos;t have an account, please&nbsp;</span>
+            <Link className="text-destructive hover:scale-110 border px-4 py-2 rounded-full w-fit mb-4" href="/sign-up">Sign Up</Link>
+        </p>
+
+        <p className='text-center text-sm mt-2 text-accent flex flex-col'>
+            Demo Credentials
+            <span className='text-white'>
+            email: demo@gmail.com
+            </span>
+            <span className='text-white'>
+            password: DemoUser@123
+            </span>
         </p>
         </div>
     )
