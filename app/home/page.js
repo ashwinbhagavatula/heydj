@@ -32,8 +32,8 @@ function Page() {
           const queue = await axios.get(
             `/api/home?userId=${session.user.userId}`
           );
-
-          if (!queue) {
+          // console.log(queue);
+          if (!queue || queue.data.queue === null) {
             const resp = await axios.post("/api/home", {
               userId: session.user.userId,
             });
