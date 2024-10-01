@@ -132,7 +132,7 @@ const Queue = ({page, queueData, handleSetQueueData, setQueueData}) => {
                 </div>
                 ))
             ) : (
-                <div>No data to display</div>
+                <div>No songs in the queue. Set the flow according to your taste.</div>
             )
         )}
     </div>
