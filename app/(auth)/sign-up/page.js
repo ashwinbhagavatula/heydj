@@ -1,12 +1,8 @@
 import SignUpForm from '@/components/form/SignUpForm'
 import React from 'react'
 
-function page() {
-  return (
-    <div className=''>
-      <SignUpForm/>
-    </div>
-  )
+function Page() {
+  return <SignUpForm />
 }
 
-export default page
+export default Page

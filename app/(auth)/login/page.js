@@ -1,13 +1,8 @@
 import SignInForm from '@/components/form/SignInForm'
 import React from 'react'
 
-function page() {
-  return (
-    <div className=''>
-      
-      <SignInForm/>
-    </div>
-  )
+function Page() {
+  return <SignInForm />
 }
 
-export default page
+export default Page
